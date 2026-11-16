@@ -1,0 +1,72 @@
+{
+  "title": "Lab 8 LogiX-VN: MAST Multi-Agent Failure Taxonomy Analysis (NeurIPS 2025)",
+  "framework": {
+    "source": "Why Do Multi-Agent LLM Systems Fail? (NeurIPS 2025)",
+    "groups": [
+      "System Design",
+      "Inter-agent Misalignment",
+      "Task Verification"
+    ],
+    "total_failure_modes": 14
+  },
+  "summary": {
+    "total_failed_trials": 1,
+    "by_shape_and_group": {
+      "swarm": {
+        "System Design": 0,
+        "Inter-agent Misalignment": 0,
+        "Task Verification": 1
+      }
+    }
+  },
+  "human_agreement_evaluation": {
+    "n": 15,
+    "agreements": 15,
+    "agreement_rate": 1.0,
+    "chance_agreement_pe": 0.36,
+    "cohen_kappa": 1.0,
+    "categories": [
+      "Inter-agent Misalignment",
+      "System Design",
+      "Task Verification"
+    ],
+    "contingency_matrix": {
+      "Inter-agent Misalignment": {
+        "Inter-agent Misalignment": 4,
+        "System Design": 0,
+        "Task Verification": 0
+      },
+      "System Design": {
+        "Inter-agent Misalignment": 0,
+        "System Design": 7,
+        "Task Verification": 0
+      },
+      "Task Verification": {
+        "Inter-agent Misalignment": 0,
+        "System Design": 0,
+        "Task Verification": 4
+      }
+    }
+  },
+  "swarm_seed_55_investigation": {
+    "claim_id": "C-002",
+    "seed": 55,
+    "detected_group": "Task Verification",
+    "detected_mode": "Grounding Failure / Untrusted Text Belief",
+    "diagnosis": "On seed 55, the worker agent hallucinated an override (delay_days = 5) based on customer ticket text, violating ground-truth order data (delay_days = 2).",
+    "recommended_mitigation": "Slide 35 Mitigation: Add a deterministic Verifier (Evaluator-Verifier pattern) before committing refunds, rejecting ungrounded ticket claims."
+  },
+  "tagged_trials": [
+    {
+      "claim_id": "C-002",
+      "shape": "swarm",
+      "seed": 55,
+      "run_id": "R-swarm-C-002-s55",
+      "reason": "status resolved != denied",
+      "failure_group": "Task Verification",
+      "failure_mode_id": "TV-1",
+      "failure_mode": "Grounding Failure / Untrusted Text Belief",
+      "rationale": "Model overrode ground-truth order data via event 'model_override' with payload {'delay_days': 5}, trusting user ticket text over database."
+    }
+  ]
+}

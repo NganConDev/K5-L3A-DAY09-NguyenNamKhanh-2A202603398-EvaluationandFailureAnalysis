@@ -28,7 +28,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Phạm Nguyễn Tất Đạt | integration | 3f5ba34 | tests/test_integration_harness.py |
+| Phạm Nguyễn Tất Đạt | integration | 7158031 | tests/test_integration_harness.py |
 
 ## Cá nhân
 

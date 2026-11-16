@@ -15,7 +15,7 @@
 |   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
 |   3 |  |   | | | Single Agent (Shape B) |
 |   4 | An | 2A202603375  |anp29239@gmail.com |anphn3 | Orchestrator (Shape C) |
-|   5 | Quân | | | | Evaluation & Report |
+|   5 | Lê Hoàng Quân | 2A202603369|lehoangquanvcb@gmail.com | lehoanquanvcb| Evaluation & Report |
 
 Gợi ý chia vai:
 
@@ -31,6 +31,7 @@ Gợi ý chia vai:
 | Phạm Nguyễn Tất Đạt | integration | 7158031 | tests/test_integration_harness.py |
 | Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 | Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (...) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
+| Lê Hoàng Quân | Shape A — Deterministic Workflow (Issue #2) | `4e5c355` | `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund` |
 
 ## Cá nhân
 

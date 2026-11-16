@@ -3,6 +3,7 @@
 ## Thông tin nhóm
 
 - Tên nhóm: DatToanAnKhanhQuan
+- Tên nhóm: DatToanAnKhanhQuan
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, nhánh 2A202603398_NguyenNamKhanh, commit ff33243

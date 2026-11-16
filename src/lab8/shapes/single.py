@@ -1,4 +1,4 @@
-"""Shape B — one ReAct agent. Student work.
+"""Shape B — one ReAct agent.
 
 Signature (do not change):
 

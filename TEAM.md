@@ -75,3 +75,21 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - `tests/test_integration_harness.py` (4 passed)
 - `src/reports/crash.json` (`crash_safety: 20/20`)
+
+## 2A202603369_LeHoangQuan
+
+### Phần việc phụ trách
+
+- Shape A — xây dựng luồng xử lý claim tất định cho LogiX-VN theo Issue #2.
+
+### Đóng góp cụ thể
+
+- Triển khai `run_claim` trong `src/lab8/shapes/workflow.py`. Workflow kiểm tra mã đơn và quyền truy cập, tính số tiền đề xuất từ dữ liệu đơn hàng và policy hiện hành, rồi chuyển toàn bộ số tiền đề xuất cho host kiểm tra approval và ghi refund.
+- Truyền `crash_at` cho host để kiểm thử khôi phục sau sự cố. Ghi trace cho cả các nhánh trả kết quả sớm.
+- Thêm test cho mã claim không tồn tại, kiểm tra trạng thái `failed`, lý do `unknown_claim`, số dòng ledger giữ nguyên và trace có `run_id` khớp với kết quả.
+
+### Bằng chứng
+
+- Commit kỹ thuật `4e5c355` — Implement deterministic workflow and test unknown claim.
+- Test thêm mới `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund`.
+- Kết quả đã ghi nhận: 62 test trong ma trận public của Shape A và 54 test trong bộ mặc định đều pass.

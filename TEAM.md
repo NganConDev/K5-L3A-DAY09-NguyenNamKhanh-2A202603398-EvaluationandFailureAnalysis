@@ -5,21 +5,17 @@
 - Tên nhóm: DatToanAnKhanhQuan
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, phamnguyentatdat
+- URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, main
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Nguyễn Tất Đạt | 2A202603401 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
-|   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
-|   3 | Phan Bá An | 2A202603375 |       | anphn3 | Shape C — orchestrator + handoff |
-|   4 | Khánh | | | | Orchestrator (Shape C) |
-<<<<<<< HEAD
-|   5 | Quân | | | | Evaluation & Report |
-=======
-|   5 | Lê Hoàng Quân | 2A202603369|lehoangquanvcb@gmail.com | lehoanquanvcb| Evaluation & Report |
->>>>>>> 71f18269108c646cd35a923a5a2763db368cff82
+|   2 | Nguyễn Ngọc Toàn | 2A202603405 | nguyengoctoan20042004@gmail.com | jpack1 | Shape B — single agent |
+|   3 | Phan Bá An | 2A202603375 | anp29239@gmail.com | anphn3 | Shape C — orchestrator + handoff |
+|   4 | Nguyễn Nam Khánh | 2A202603398 | nguyennamkhanhnd2004@gmail.com | ngancondev | CP3 + CP4: Ledger Durability, Policy & Crash Safety |
+|   5 | Lê Hoàng Quân | 2A202603369 | lehoangquanvcb@gmail.com | lehoanquanvcb | Shape A — Deterministic Workflow |
 
 Gợi ý chia vai:
 
@@ -35,10 +31,8 @@ Gợi ý chia vai:
 | Phạm Nguyễn Tất Đạt (2A202603401, datnguyen101004) | integration | 7158031 | tests/test_integration_harness.py |
 | Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 | Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (`src/lab8/shapes/orchestrator.py`) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
-<<<<<<< HEAD
-=======
-| Lê Hoàng Quân | Shape A — Deterministic Workflow (Issue #2) | `4e5c355` | `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund` |
->>>>>>> 71f18269108c646cd35a923a5a2763db368cff82
+| Nguyễn Nam Khánh (2A202603398, ngancondev) | CP3 + CP4: Ledger Durability, Policy Enforcement & Crash Safety | ff33243 | src/tests/test_cp3_cp4_durability_policy.py |
+| Lê Hoàng Quân (2A202603369, lehoanquanvcb) | Shape A — Deterministic Workflow (Issue #2) | `4e5c355` | `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund` |
 
 ## Cá nhân
 
@@ -51,20 +45,6 @@ report/team/MSSV_HoTen.md
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
-
-## MSSV_HoTen
-
-### Phần việc phụ trách
-
--
-
-### Đóng góp cụ thể
-
--
-
-### Bằng chứng
-
--
 
 ## 2A202603401_PhamNguyenTatDat
 
@@ -82,6 +62,58 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - `tests/test_integration_harness.py` (4 passed)
 - `src/reports/crash.json` (`crash_safety: 20/20`)
+
+## 2A202603405_NguyenNgocToan
+
+### Phần việc phụ trách
+
+- Shape B: Single ReAct Agent (`src/lab8/shapes/single.py`).
+
+### Đóng góp cụ thể
+
+- Triển khai vòng lặp ReAct có giới hạn (tối đa 8 bước), tích hợp MockLLM và các tool đọc/ghi.
+- Đảm bảo tiền bồi thường tính bằng `compute_compensation`, không để LLM tự quyết định số tiền.
+- Viết test kiểm thử `src/tests/test_single_shape.py`.
+
+### Bằng chứng
+
+- `src/tests/test_single_shape.py` (passed)
+- Student matrix ma trận kiểm thử Shape B: 62 passed.
+
+## 2A202603375_PhanBaAn
+
+### Phần việc phụ trách
+
+- Shape C: Orchestrator + read-only investigators (`src/lab8/shapes/orchestrator.py`).
+
+### Đóng góp cụ thể
+
+- Triển khai kiến trúc Orchestrator và Investigator chỉ đọc với cơ chế Handoff thông qua allowlist nghiêm ngặt.
+- Ngăn chặn rò rỉ secret / PII ra ngoài trace.
+- Viết bộ test `src/tests/test_orchestrator_shape_c.py` (7 tests).
+
+### Bằng chứng
+
+- `src/tests/test_orchestrator_shape_c.py` (7 passed)
+- Student matrix ma trận kiểm thử Shape C: 62 passed.
+
+## 2A202603398_NguyenNamKhanh
+
+### Phần việc phụ trách
+
+- CP3: Ledger Durability, Idempotency, Crash Safety.
+- CP4: Policy Enforcement, Approval Validation, Audit Integrity.
+
+### Đóng góp cụ thể
+
+- Xây dựng bộ test bất biến `src/tests/test_cp3_cp4_durability_policy.py` kiểm thử các trường hợp biên approval, crash trước/sau effect, conflict amount và idempotency replay.
+- Kiểm tra tính bền vững giao dịch, đảm bảo `durability.issue_refund` luôn nhận full quote, không bắt `InjectedCrash`.
+- Xác minh crash safety đạt 20/20 trên `reports/crash.json`.
+
+### Bằng chứng
+
+- File test: `src/tests/test_cp3_cp4_durability_policy.py` (6 passed).
+- Crash report: `src/reports/crash.json` (`crash_safety: 20/20`).
 
 ## 2A202603369_LeHoangQuan
 

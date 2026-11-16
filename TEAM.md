@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
+|   1 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
 |   2 |        |      |       |        |         |
 
 Gợi ý chia vai:
@@ -25,7 +25,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 
 ## Cá nhân
 

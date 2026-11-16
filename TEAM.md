@@ -15,7 +15,11 @@
 |   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
 |   3 | Phan Bá An | 2A202603375 |       | anphn3 | Shape C — orchestrator + handoff |
 |   4 | Khánh | | | | Orchestrator (Shape C) |
+<<<<<<< HEAD
 |   5 | Quân | | | | Evaluation & Report |
+=======
+|   5 | Lê Hoàng Quân | 2A202603369|lehoangquanvcb@gmail.com | lehoanquanvcb| Evaluation & Report |
+>>>>>>> 71f18269108c646cd35a923a5a2763db368cff82
 
 Gợi ý chia vai:
 
@@ -31,6 +35,10 @@ Gợi ý chia vai:
 | Phạm Nguyễn Tất Đạt (2A202603401, datnguyen101004) | integration | 7158031 | tests/test_integration_harness.py |
 | Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 | Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (`src/lab8/shapes/orchestrator.py`) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
+<<<<<<< HEAD
+=======
+| Lê Hoàng Quân | Shape A — Deterministic Workflow (Issue #2) | `4e5c355` | `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund` |
+>>>>>>> 71f18269108c646cd35a923a5a2763db368cff82
 
 ## Cá nhân
 
@@ -74,3 +82,21 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - `tests/test_integration_harness.py` (4 passed)
 - `src/reports/crash.json` (`crash_safety: 20/20`)
+
+## 2A202603369_LeHoangQuan
+
+### Phần việc phụ trách
+
+- Shape A — xây dựng luồng xử lý claim tất định cho LogiX-VN theo Issue #2.
+
+### Đóng góp cụ thể
+
+- Triển khai `run_claim` trong `src/lab8/shapes/workflow.py`. Workflow kiểm tra mã đơn và quyền truy cập, tính số tiền đề xuất từ dữ liệu đơn hàng và policy hiện hành, rồi chuyển toàn bộ số tiền đề xuất cho host kiểm tra approval và ghi refund.
+- Truyền `crash_at` cho host để kiểm thử khôi phục sau sự cố. Ghi trace cho cả các nhánh trả kết quả sớm.
+- Thêm test cho mã claim không tồn tại, kiểm tra trạng thái `failed`, lý do `unknown_claim`, số dòng ledger giữ nguyên và trace có `run_id` khớp với kết quả.
+
+### Bằng chứng
+
+- Commit kỹ thuật `4e5c355` — Implement deterministic workflow and test unknown claim.
+- Test thêm mới `src/tests/test_workflow.py::test_workflow_unknown_claim_returns_failed_without_refund`.
+- Kết quả đã ghi nhận: 62 test trong ma trận public của Shape A và 54 test trong bộ mặc định đều pass.

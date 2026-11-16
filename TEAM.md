@@ -11,10 +11,10 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Phạm Nguyễn Tất Đạt | datnguyen101004 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
+|   1 | Phạm Nguyễn Tất Đạt | 2A202603401 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
 |   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
-|   3 |  |   | | | Single Agent (Shape B) |
-|   4 | An | 2A202603375  |anp29239@gmail.com |anphn3 | Orchestrator (Shape C) |
+|   3 | Phan Bá An | 2A202603375 |       | anphn3 | Shape C — orchestrator + handoff |
+|   4 | Khánh | | | | Orchestrator (Shape C) |
 |   5 | Quân | | | | Evaluation & Report |
 
 Gợi ý chia vai:
@@ -28,9 +28,9 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Phạm Nguyễn Tất Đạt | integration | 7158031 | tests/test_integration_harness.py |
+| Phạm Nguyễn Tất Đạt (2A202603401, datnguyen101004) | integration | 7158031 | tests/test_integration_harness.py |
 | Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
-| Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (...) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
+| Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (`src/lab8/shapes/orchestrator.py`) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
 
 ## Cá nhân
 
@@ -58,7 +58,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 -
 
-## datnguyen101004_PhamNguyenTatDat
+## 2A202603401_PhamNguyenTatDat
 
 ### Phần việc phụ trách
 

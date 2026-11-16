@@ -2,17 +2,20 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: DatToanAnKhanhQuan
 - Lớp: L3A
-- Repo nhóm: `K5-L3A-DAY08-TenNhom-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Repo nhóm: `K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, phamnguyentatdat
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
+|   1 | Phạm Nguyễn Tất Đạt | datnguyen101004 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
+|   2 | Toàn | | | | Workflow (Shape A) |
+|   3 | An | | | | Single Agent (Shape B) |
+|   4 | Khánh | | | | Orchestrator (Shape C) |
+|   5 | Quân | | | | Evaluation & Report |
 
 Gợi ý chia vai:
 
@@ -25,7 +28,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| | | | |
+| Phạm Nguyễn Tất Đạt | integration | 3f5ba34 | tests/test_integration_harness.py |
 
 ## Cá nhân
 
@@ -52,3 +55,20 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 -
+
+## datnguyen101004_PhamNguyenTatDat
+
+### Phần việc phụ trách
+
+- Integration: Thiết lập môi trường Python 3.12, kích hoạt venv, kiểm định smoke test, duy trì cổng host pytest luôn xanh, chạy Crash suite (20/20), bổ sung integration test harness và kiểm định checklist submission.
+
+### Đóng góp cụ thể
+
+- Cài đặt virtual environment `.venv` và dependencies (`requirements.txt`).
+- Xây dựng bộ test harness `src/tests/test_integration_harness.py` kiểm định môi trường runtime Python 3.11–3.13, SQLite, tính toàn vẹn 14 public claims, cấu hình YAML và crash safety.
+- Chạy sinh `src/reports/crash.json` đạt chuẩn must-pass 20/20.
+
+### Bằng chứng
+
+- `tests/test_integration_harness.py` (4 passed)
+- `src/reports/crash.json` (`crash_safety: 20/20`)

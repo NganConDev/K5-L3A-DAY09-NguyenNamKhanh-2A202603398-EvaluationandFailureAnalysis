@@ -13,8 +13,8 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Nguyễn Tất Đạt | datnguyen101004 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
 |   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
-|   3 | An | | | | Single Agent (Shape B) |
-|   4 | Khánh | | | | Orchestrator (Shape C) |
+|   3 |  |   | | | Single Agent (Shape B) |
+|   4 | An | 2A202603375  |anp29239@gmail.com |anphn3 | Orchestrator (Shape C) |
 |   5 | Quân | | | | Evaluation & Report |
 
 Gợi ý chia vai:

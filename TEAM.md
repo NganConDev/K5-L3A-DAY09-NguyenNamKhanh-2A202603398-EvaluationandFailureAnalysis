@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Phạm Nguyễn Tất Đạt | datnguyen101004 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
-|   2 | Toàn | | | | Workflow (Shape A) |
+|   2 | Nguyễn Ngọc Toàn | 2A202603405 |       | jpack1 | Shape B — single agent |
 |   3 | An | | | | Single Agent (Shape B) |
 |   4 | Khánh | | | | Orchestrator (Shape C) |
 |   5 | Quân | | | | Evaluation & Report |
@@ -29,6 +29,7 @@ Gợi ý chia vai:
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
 | Phạm Nguyễn Tất Đạt | integration | 7158031 | tests/test_integration_harness.py |
+| Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 
 ## Cá nhân
 

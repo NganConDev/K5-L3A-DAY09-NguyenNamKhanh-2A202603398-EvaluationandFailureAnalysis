@@ -7,7 +7,11 @@ Reference values to self-check are in tests/test_lab9_stats.py.
 
 from __future__ import annotations
 
+import math
 from collections.abc import Sequence
+
+import numpy as np
+from scipy.stats import bootstrap as scipy_bootstrap
 
 POS = "FAIL"   # the judge's job is to FIND failures, so FAIL is the positive class
 
@@ -67,20 +71,47 @@ def paired_bootstrap(a: Sequence[float], b: Sequence[float], *, n_resamples: int
     """a[i], b[i] = per-item mean over seeds, SAME items, SAME order.
     Return (mean(a)-mean(b), lo, hi) with scipy.stats.bootstrap(paired=True, method="percentile",
     rng=numpy.random.default_rng(rng)). If a == b everywhere return (0.0, 0.0, 0.0)."""
-    # TODO M4
-    raise NotImplementedError
+    if len(a) != len(b):
+        raise ValueError(f"Length mismatch: {len(a)} vs {len(b)}")
+    if not a:
+        return 0.0, 0.0, 0.0
+    a_arr = np.asarray(a, dtype=float)
+    b_arr = np.asarray(b, dtype=float)
+    if np.all(np.isclose(a_arr, b_arr)):
+        return 0.0, 0.0, 0.0
+    d = float(np.mean(a_arr) - np.mean(b_arr))
+
+    def diff_mean(x, y, axis=-1):
+        return np.mean(x, axis=axis) - np.mean(y, axis=axis)
+
+    res = scipy_bootstrap(
+        (a_arr, b_arr),
+        diff_mean,
+        paired=True,
+        method="percentile",
+        n_resamples=n_resamples,
+        random_state=np.random.default_rng(rng),
+        confidence_level=confidence,
+    )
+    return d, float(res.confidence_interval.low), float(res.confidence_interval.high)
 
 
 def pass_at_k(n: int, c: int, k: int) -> float:
     """Probability that AT LEAST ONE of k trials drawn from n (c of them passing) passes.
     Unbiased estimator (Chen et al. 2021): 1 - C(n-c, k) / C(n, k). Raise ValueError if k > n."""
-    # TODO M6
-    raise NotImplementedError
+    if k <= 0 or k > n or c < 0 or c > n:
+        raise ValueError(f"Invalid args: n={n}, c={c}, k={k}")
+    if n - c < k:
+        return 1.0
+    return float(1.0 - math.comb(n - c, k) / math.comb(n, k))
 
 
 def pass_hat_k(n: int, c: int, k: int) -> float:
     """pass^k (tau-bench, Yao et al. 2024): probability that ALL k trials drawn from n pass.
     Unbiased estimator: C(c, k) / C(n, k). Raise ValueError if k > n.
     pass^k <= pass@1 <= pass@k; a reliable agent keeps pass^k close to pass@1."""
-    # TODO M6
-    raise NotImplementedError
+    if k <= 0 or k > n or c < 0 or c > n:
+        raise ValueError(f"Invalid args: n={n}, c={c}, k={k}")
+    if c < k:
+        return 0.0
+    return float(math.comb(c, k) / math.comb(n, k))

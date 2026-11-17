@@ -7,12 +7,12 @@
 - Repo nhóm: `K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents`
 - URL repo: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents
 - Thành viên:
-  1. Phạm Nguyễn Tất Đạt (MSSV: 2A202603401) — Integration, Test Harness & Bonus B2
+  1. Phạm Nguyễn Tất Đạt (MSSV: 2A202603401) — Integration, Benchmark + Report, Bonus B2
   2. Nguyễn Ngọc Toàn (MSSV: 2A202603405) — Shape B (Single ReAct Agent)
   3. Phan Bá An (MSSV: 2A202603375) — Shape C (Orchestrator + Investigators)
   4. Nguyễn Nam Khánh (MSSV: 2A202603398) — CP3 & CP4 (Ledger Durability, Policy & Crash Safety)
   5. Lê Hoàng Quân (MSSV: 2A202603369) — Shape A (Deterministic Workflow)
-- Commit chốt: `f60bb2e` (đồng bộ với `report/team/decision_adr.md`)
+- Commit chốt: `8422194` (đồng bộ với `report/team/decision_adr.md`)
 
 ---
 
@@ -26,7 +26,7 @@ Hệ thống xử lý khiếu nại hoàn cước vận chuyển tự động ch
 
 ### Phân công công việc
 Nhóm chia thành 5 vai trò độc lập theo đúng quy trình phân rã kỹ thuật:
-- **Đạt:** Khởi tạo môi trường, test harness tích hợp, đảm bảo suite test host luôn xanh, triển khai Bonus B2 (MAST Tagging).
+- **Đạt:** Khởi tạo môi trường, test harness tích hợp, thực thi ma trận benchmark 4 shapes, hoàn thiện báo cáo và hồ sơ nộp bài, triển khai Bonus B2 (MAST Tagging).
 - **Quân:** Hiện thực Shape A (Deterministic Workflow), kiểm soát luồng tất định thuần code.
 - **Toàn:** Hiện thực Shape B (Single ReAct Agent), kiểm soát vòng lặp suy luận có giới hạn bước.
 - **An:** Hiện thực Shape C (Orchestrator + Handoff), kiểm soát kiến trúc phân rã điều phối và trinh sát chỉ đọc.

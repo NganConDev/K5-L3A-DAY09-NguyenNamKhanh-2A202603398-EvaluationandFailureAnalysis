@@ -5,13 +5,13 @@
 - Tên nhóm: DatToanAnKhanhQuan
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, main
+- URL repo, nhánh nộp, commit chốt: https://github.com/datnguyen101004/K5-L3A-DAY08-DatToanAnKhanhQuan-FromWorkflowsToAgents, main, 8422194
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Phạm Nguyễn Tất Đạt | 2A202603401 | datnguyen101004@gmail.com | datnguyen101004 | Integration & Host / Eval |
+|   1 | Phạm Nguyễn Tất Đạt | 2A202603401 | datnguyen101004@gmail.com | datnguyen101004 | Integration, Benchmark + Report, Bonus |
 |   2 | Nguyễn Ngọc Toàn | 2A202603405 | nguyengoctoan20042004@gmail.com | jpack1 | Shape B — single agent |
 |   3 | Phan Bá An | 2A202603375 | anp29239@gmail.com | anphn3 | Shape C — orchestrator + handoff |
 |   4 | Nguyễn Nam Khánh | 2A202603398 | nguyennamkhanhnd2004@gmail.com | ngancondev | CP3 + CP4: Ledger Durability, Policy & Crash Safety |
@@ -28,7 +28,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Phạm Nguyễn Tất Đạt (2A202603401, datnguyen101004) | integration | 7158031 | tests/test_integration_harness.py |
+| Phạm Nguyễn Tất Đạt (2A202603401, datnguyen101004) | Integration, Benchmark + Report, Bonus | 7158031 | tests/test_integration_harness.py, src/tests/test_bonus_mast.py |
 | Nguyễn Ngọc Toàn (2A202603405, jpack1) | Shape B — single ReAct agent (`src/lab8/shapes/single.py`) | 307a9a4 | `src/tests/test_single_shape.py` (thêm mới) |
 | Phan Bá An (2A202603375, anphn3) | Shape C — orchestrator + read-only investigators (`src/lab8/shapes/orchestrator.py`) | 5002904 | `src/tests/test_orchestrator_shape_c.py` (thêm mới, 7 test) |
 | Nguyễn Nam Khánh (2A202603398, ngancondev) | CP3 + CP4: Ledger Durability, Policy Enforcement & Crash Safety | ff33243 | src/tests/test_cp3_cp4_durability_policy.py |
@@ -50,18 +50,24 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Phần việc phụ trách
 
-- Integration: Thiết lập môi trường Python 3.12, kích hoạt venv, kiểm định smoke test, duy trì cổng host pytest luôn xanh, chạy Crash suite (20/20), bổ sung integration test harness và kiểm định checklist submission.
+- **Integration (CP1):** Thiết lập môi trường Python 3.12, kích hoạt venv, kiểm định smoke test, duy trì cổng host pytest luôn xanh, chạy Crash suite (20/20), bổ sung integration test harness và kiểm định checklist submission.
+- **Benchmark + Report (CP5):** Thực thi benchmark toàn diện 4 shapes × 14 claims × 5 seeds (280 trials), tổng hợp số liệu và phân tích ra `reports/benchmark.json`, hoàn thiện `report/team/decision_adr.md`, `report/team/group_report.md` và `report/team/research_card.md`.
+- **Bonus Topic (B2):** Nghiên cứu mở rộng gắn nhãn lỗi Multi-Agent theo phân loại MAST (NeurIPS 2025), xây dựng pipeline `src/bonus/`, viết bộ test `src/tests/test_bonus_mast.py` và sinh báo cáo `reports/bonus_mast.json` (Cohen's kappa = 1.0000).
 
 ### Đóng góp cụ thể
 
 - Cài đặt virtual environment `.venv` và dependencies (`requirements.txt`).
 - Xây dựng bộ test harness `src/tests/test_integration_harness.py` kiểm định môi trường runtime Python 3.11–3.13, SQLite, tính toàn vẹn 14 public claims, cấu hình YAML và crash safety.
 - Chạy sinh `src/reports/crash.json` đạt chuẩn must-pass 20/20.
+- Thực thi benchmark ma trận 4 shapes × 5 seeds tạo `src/reports/benchmark.json`, kiểm tra độ lệch chuẩn, phân tích chi phí và pass rate giữa các shape.
+- Soạn thảo và hoàn thiện đầy đủ hồ sơ nộp bài nhóm: `decision_adr.md`, `group_report.md` (8 phần theo chuẩn Rubric) và `research_card.md` (câu R2).
+- Hoàn thành Bonus B2: gán nhãn lỗi MAST cho 112 failure traces, viết test `test_bonus_mast.py` và tạo báo cáo `report/team/bonus_report.md`.
 
 ### Bằng chứng
 
-- `tests/test_integration_harness.py` (4 passed)
-- `src/reports/crash.json` (`crash_safety: 20/20`)
+- `tests/test_integration_harness.py` (4 passed), `src/tests/test_bonus_mast.py` (6 passed)
+- `src/reports/crash.json` (`crash_safety: 20/20`), `src/reports/benchmark.json` (280 trials), `src/reports/bonus_mast.json` ($\kappa = 1.0000$)
+- `report/team/group_report.md`, `report/team/decision_adr.md`, `report/team/research_card.md`, `report/team/bonus_report.md`
 
 ## 2A202603405_NguyenNgocToan
 
